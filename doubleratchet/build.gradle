@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 26
@@ -31,4 +32,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    // https://rtyley.github.io/spongycastle/
+    compile 'io.github.rtyley.spongycastle:bcpg-jdk15on:sc-v1.58.0.0'
+
+    compile 'org.whispersystems:curve25519-android:0.4.1'
+
+    compile 'com.google.guava:guava:23.5-android'
+}
+repositories {
+    mavenCentral()
 }
