@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         // Established shared key
         val keyPairAlice = doubleRatchet.generateKeyPair()
         val keyPairBob = doubleRatchet.generateKeyPair()
-        // SKAlice and SKBob are actually identical
         val SKBob = keyPairBob.getAgreement(keyPairAlice.getPublicKey())
         val SKAlice = keyPairAlice.getAgreement(keyPairBob.getPublicKey())
 

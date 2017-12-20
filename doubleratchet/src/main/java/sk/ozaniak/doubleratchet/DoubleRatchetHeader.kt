@@ -19,4 +19,6 @@ class DoubleRatchetHeader(val publicKey: ByteArray, val previousChainSize: Int, 
         return out
     }
 
+    //TODO make fromByteArray()
+
 }
