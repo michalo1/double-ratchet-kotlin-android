@@ -28,9 +28,9 @@ class MainActivity : AppCompatActivity() {
         alice.sendMessage(bob, "Hello Bob!")
         bob.sendMessage(alice, "Hi Alice, how are you?")
         alice.sendMessage(bob, "I'm fine, what about you?")
-        bob.sendMessage(alice, "Perfect")
 
         // Test 2
+        bob.sendMessage(alice, "Bob's first message in a row")
         bob.sendMessage(alice, "Bob's second message in a row")
         bob.sendMessage(alice, "Bob's third message in a row")
 
