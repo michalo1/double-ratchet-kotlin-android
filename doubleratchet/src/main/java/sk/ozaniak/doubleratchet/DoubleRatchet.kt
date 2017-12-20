@@ -186,13 +186,13 @@ class DoubleRatchet private constructor(val appSpecificInfo: ByteArray,
      */
     private fun kdfRootKey(rk: ByteArray, dhOut: ByteArray): Pair<ByteArray, ByteArray> {
         val hkdfParameters = HKDFParameters(dhOut, rk, appSpecificInfo)
-        val out = ByteArray(64)
         val hkdfGenerator = HKDFBytesGenerator(SHA512Digest())
         hkdfGenerator.init(hkdfParameters)
-        hkdfGenerator.generateBytes(out, 0, 64)
-        val newRk = out.take(32)
-        val newCk = out.takeLast(32)
-        return Pair(newRk.toByteArray(), newCk.toByteArray())
+        val newRk = ByteArray(32)
+        hkdfGenerator.generateBytes(newRk, 0, 32)
+        val newCk = ByteArray(32)
+        hkdfGenerator.generateBytes(newCk, 0, 32)
+        return Pair(newRk, newCk)
     }
 
     /**
